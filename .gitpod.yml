@@ -1,0 +1,17 @@
+image:
+ file: .gitpod.dockerfile
+tasks:
+ - init: >
+     npm run build-server &&
+     npm run build-browser
+   command: npm start
+ - command: npm run watch-browser
+ports:
+ - port: 1234
+   onOpen: open-browser
+ - port: 9999
+   onOpen: ignore
+ - port: 5900
+   onOpen: ignore
+ - port: 6080
+   onOpen: ignore
